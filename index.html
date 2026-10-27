@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Portfolio</title>
+
+<style>
+/* ================= CSS ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #222;
+    transition: 0.3s;
+}
+
+header {
+    background: #151b35;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #00d4ff;
+}
+
+#themeBtn {
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 30px;
+    color: #5754e8;
+}
+
+.hero {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #151b35, #4c35aa);
+    color: white;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+}
+
+.hero span {
+    color: #00d4ff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #5754e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #3835c4;
+}
+
+#about p {
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.skills-container,
+.project-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill,
+.project-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #00000015;
+}
+
+.skill {
+    min-width: 130px;
+    font-weight: bold;
+}
+
+.project-card {
+    width: 280px;
+    text-align: left;
+}
+
+.project-card h3 {
+    color: #5754e8;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    line-height: 1.6;
+}
+
+form {
+    max-width: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font: inherit;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#formStatus {
+    margin-top: 15px;
+}
+
+footer {
+    background: #151b35;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Dark Mode */
+
+body.dark {
+    background: #101525;
+    color: white;
+}
+
+body.dark .skill,
+body.dark .project-card {
+    background: #202944;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    nav {
+        justify-content: center;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HTML ================= -->
+
+<header>
+    <nav>
+        <h2>My Portfolio</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button id="themeBtn">🌙</button>
+    </nav>
+</header>
+
+<!-- Home -->
+
+<section id="home" class="hero">
+
+    <h1>Hello, I'm <span>Lathika</span></h1>
+
+    <h3>BCA</h3>
+
+    <p>Web Developer | Tech Enthusiast | Student</p>
+
+    <a href="#projects" class="btn">View Projects</a>
+
+</section>
+
+<!-- About -->
+
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <p>
+        I am an enthusiastic engineering student
+        interested in web development, programming,
+        and innovative technology projects.
+    </p>
+
+</section>
+
+<!-- Skills -->
+
+<section id="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Python</div>
+        <div class="skill">Embedded Systems</div>
+
+    </div>
+
+</section>
+
+<!-- Projects -->
+
+<section id="projects">
+
+    <h2>My Projects</h2>
+
+    <div class="project-container">
+
+        <div class="project-card">
+
+            <h3>Student Portfolio</h3>
+
+            <p>
+                Responsive portfolio using HTML,
+                CSS and JavaScript.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <h3>Smart Parking System</h3>
+
+            <p>
+                IoT-based smart parking project.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <h3>E-Commerce Website</h3>
+
+            <p>
+                Online shopping website with
+                product listings.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact -->
+
+<section id="contact">
+
+    <h2>Contact Me</h2>
+
+    <form id="contactForm">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            required
+        >
+
+        <textarea
+            id="message"
+            placeholder="Your Message"
+            required
+        ></textarea>
+
+        <button type="submit" class="btn">
+            Send Message
+        </button>
+
+    </form>
+
+    <p id="formStatus"></p>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 Student Portfolio | All Rights Reserved
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const themeBtn = document.getElementById("themeBtn");
+
+/* Load saved theme */
+
+if (localStorage.getItem("theme") === "dark") {
+
+    document.body.classList.add("dark");
+
+    themeBtn.textContent = "☀️";
+}
+
+
+/* Dark / Light Mode */
+
+themeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark");
+
+    const isDark =
+        document.body.classList.contains("dark");
+
+    themeBtn.textContent =
+        isDark ? "☀️" : "🌙";
+
+    localStorage.setItem(
+        "theme",
+        isDark ? "dark" : "light"
+    );
+
+});
+
+
+/* Contact Form */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+const formStatus =
+    document.getElementById("formStatus");
+
+
+contactForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    if (!name || !email || !message) {
+
+        formStatus.textContent =
+            "Please fill all fields.";
+
+        return;
+    }
+
+
+    const subject =
+        encodeURIComponent(
+            "Portfolio Contact from " + name
+        );
+
+
+    const body =
+        encodeURIComponent(
+            "Name: " + name +
+            "\nEmail: " + email +
+            "\n\nMessage:\n" + message
+        );
+
+
+    /* Replace this with your own email address */
+
+    const portfolioEmail =
+        "your-email@example.com";
+
+
+    window.location.href =
+        `mailto:${portfolioEmail}?subject=${subject}&body=${body}`;
+
+
+    formStatus.textContent =
+        "Your email application will open. Send the message from there.";
+
+});
+
+</script>
+
+</body>
+</html>
